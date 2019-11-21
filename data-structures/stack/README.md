@@ -17,3 +17,5 @@ The most recently added item is the one that is in position to be removed first.
 | peek()     | O(1)  | Returns the top item from the stack               |
 | size()     | O(1)  | Returns the number of items in the stack          |
 | is_empty() | O(1)  | Returns True if stack is empty                    |
+
+*Note: Big O depends on the implementation.*

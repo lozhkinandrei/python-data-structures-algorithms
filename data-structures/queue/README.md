@@ -15,3 +15,5 @@ The most recently added item in the queue must wait at the end of the collection
 | dequeue()     | O(1)  | Returns and removes the front item from the queue |
 | size()        | O(1)  | Returns the number of items in the queue          |
 | is_empty()    | O(1)  | Returns True if queue is empty                    |
+
+*Note: Big O depends on the implementation.*
