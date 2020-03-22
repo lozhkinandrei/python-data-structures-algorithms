@@ -1,6 +1,6 @@
 ## Deque
 
-<img src="./deque.svg"><br/>
+<img src="./assets/deque.svg"><br/>
 
 A deque, also known as a double-ended queue, is an ordered collection of items similar to the queue. It has two ends, and new items can be added at either the front or the rear. Likewise, existing items can be removed from either end.
 

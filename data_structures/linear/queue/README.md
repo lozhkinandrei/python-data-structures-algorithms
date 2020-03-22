@@ -1,6 +1,6 @@
 ## Queue
 
-<img src="./queue.svg"><br/>
+<img src="./assets/queue.svg"><br/>
 
 A queue is an **ordered** collection of items where the addition of new items happens at one end, called the “rear”, and the removal of existing items occurs at the other end, commonly called the “front”.
 
