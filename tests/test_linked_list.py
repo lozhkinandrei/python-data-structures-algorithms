@@ -1,10 +1,10 @@
 import unittest
-from linked_list import LinkedList
+from data_structures.linear.linked_list import linked_list
 
 
 class TestLinkedListMethods(unittest.TestCase):
     def setUp(self):
-        self.list = LinkedList()
+        self.list = linked_list.LinkedList()
 
     def test_add(self):
         self.list.add(1)

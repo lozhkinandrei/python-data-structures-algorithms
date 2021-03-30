@@ -1,10 +1,10 @@
 import unittest
-from deque import Deque
+from data_structures.linear.deque import deque
 
 
 class TestDequeMethods(unittest.TestCase):
     def setUp(self):
-        self.deque = Deque()
+        self.deque = deque.Deque()
 
     def test_add_front(self):
         self.deque.add_front(1)

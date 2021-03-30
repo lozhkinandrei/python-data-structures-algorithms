@@ -1,10 +1,10 @@
 import unittest
-from stack import Stack
+from data_structures.linear.stack import stack
 
 
 class TestStackMethods(unittest.TestCase):
     def setUp(self):
-        self.stack = Stack()
+        self.stack = stack.Stack()
 
     def test_push(self):
         self.stack.push(1)

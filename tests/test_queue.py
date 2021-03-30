@@ -1,10 +1,10 @@
 import unittest
-from queue import Queue
+from data_structures.linear.queue import queue
 
 
 class TestQueueMethods(unittest.TestCase):
     def setUp(self):
-        self.queue = Queue()
+        self.queue = queue.Queue()
 
     def test_enqueue(self):
         self.queue.enqueue(1)
