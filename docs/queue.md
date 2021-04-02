@@ -1,6 +1,6 @@
 ## Queue
 
-<img src="../../../docs/assets/queue/queue.svg"><br/>
+<img src="assets/queue/queue.svg"><br/>
 
 A queue is an **ordered** collection of items where the addition of new items happens at one end, called the “rear”, and the removal of existing items occurs at the other end, commonly called the “front”.
 
@@ -17,3 +17,5 @@ The most recently added item in the queue must wait at the end of the collection
 | is_empty()    | O(1)  | Returns True if queue is empty                    |
 
 *Note: Big O depends on the implementation.*
+
+[Back](linear.md)

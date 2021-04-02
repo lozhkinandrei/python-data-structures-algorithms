@@ -1,6 +1,6 @@
 ## Linked List
 
-<img src="../../../docs/assets/linked_list/linked_list.svg"><br/>
+<img src="assets/linked_list/linked_list.svg"><br/>
 
 A linked list is a linear data structure where each element is a separate object. Each element (node) of a list is comprising of two items - the data and a reference to the next node. The last node has a reference to null. The entry point into a linked list is called the head of the list.
 
@@ -20,3 +20,5 @@ A linked list is a linear data structure where each element is a separate object
 | pop(position)| O(n)  | Remove and return the item at specified position      |
 
 *Note: Big O depends on the implementation.*
+
+[Back](linear.md)

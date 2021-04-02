@@ -1,5 +1,7 @@
 # Python Data Structures and Algorithms
 
+#### [❤️ Nicer documentation](https://lozhkinandrei.github.io/python-data-structures-algorithms)
+
 ### 🎓 Data Structures
 
 #### [Linear](https://github.com/lozhkinandrei/python-data-structures-algorithms/tree/master/data_structures/linear)
@@ -13,6 +15,8 @@
 2. Graph
 
 ### ⌛️ Algorithms
+
+
 
 
 ### FAQ
