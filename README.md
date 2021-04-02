@@ -14,3 +14,7 @@
 
 ### ⌛️ Algorithms
 
+
+### FAQ
+#### 1. How to run tests?
+From project folder run `python -m unittest discover tests`
