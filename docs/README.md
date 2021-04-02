@@ -3,10 +3,10 @@
 ### 🎓 Data Structures
 
 #### [Linear](linear)
-1. [Stack](stack)
-2. [Queue](queue)
-3. [Deque](deque)
-4. [Linked List](linked_list)
+1. [🍔 Stack](stack)
+2. [🖨️ Queue](queue)
+3. [🌐 Deque](deque)
+4. [🔗 Linked List](linked_list)
 
 #### [Non-Linear](non_linear)
 1. [Tree](tree)
