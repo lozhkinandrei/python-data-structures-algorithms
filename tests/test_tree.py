@@ -1,10 +1,10 @@
 import unittest
-from data_structures.non_linear.tree import tree
+from data_structures.non_linear.tree import Node
 
 
 class TestTreeMethods(unittest.TestCase):
     def setUp(self):
-        self.tree = tree.Node(1)
+        self.tree = Node(1)
 
     def test_insert_left(self):
         self.tree.insert_left(2)

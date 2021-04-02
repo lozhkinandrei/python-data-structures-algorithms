@@ -1,10 +1,10 @@
 import unittest
-from data_structures.linear.linked_list import linked_list
+from data_structures.linear.linked_list import LinkedList
 
 
 class TestLinkedListMethods(unittest.TestCase):
     def setUp(self):
-        self.list = linked_list.LinkedList()
+        self.list = LinkedList()
 
     def test_add(self):
         self.list.add(1)
@@ -29,7 +29,7 @@ class TestLinkedListMethods(unittest.TestCase):
         self.assertEqual(self.list.search(3), False)
 
     def test_remove(self):
-        with self.assertRaises(ValueError): self.list.remove(1)
+        self.assertRaises(ValueError, self.list.remove, 1)
         self.list.add(1)
         self.list.add(2)
         self.list.add(3)
@@ -37,15 +37,15 @@ class TestLinkedListMethods(unittest.TestCase):
         self.assertEqual(self.list.search(2), False)
 
     def test_index(self):
-        with self.assertRaises(ValueError): self.list.index(1)
+        self.assertRaises(ValueError, self.list.index, 1)
         self.list.add(1)
         self.list.add(2)
         self.list.add(3)
         self.assertEqual(self.list.index(3), 0)
 
     def test_pop(self):
-        with self.assertRaises(IndexError): self.list.pop()
-        with self.assertRaises(IndexError): self.list.pop(1)
+        self.assertRaises(IndexError, self.list.pop)
+        self.assertRaises(IndexError, self.list.pop, 1)
         self.list.add(1)
         self.list.add(2)
         self.list.add(3)
