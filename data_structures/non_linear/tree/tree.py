@@ -1,3 +1,5 @@
+from queue import Queue
+
 
 class Node:
     def __init__(self, key, left=None, right=None):
@@ -54,5 +56,23 @@ class Node:
 
         if self.right:
             result += self.right.inorder()
+
+        return result
+
+    def breadth_first_traversal(self):
+        result = []
+
+        queue = Queue()
+        queue.put(self)
+
+        while queue.qsize() > 0:
+            node = queue.get()
+            result.append(node.key)
+
+            if node.left:
+                queue.put(node.left)
+
+            if node.right:
+                queue.put(node.right)
 
         return result
