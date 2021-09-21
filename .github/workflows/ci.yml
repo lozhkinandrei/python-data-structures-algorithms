@@ -29,9 +29,13 @@ jobs:
         run: black --check --verbose .
 
       - name: Generate coverage report
-        run: coverage run -m unittest
+        run: |
+          coverage run -m unittest
+          coverage report
+          coverage html
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
