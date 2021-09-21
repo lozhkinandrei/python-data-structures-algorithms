@@ -8,7 +8,7 @@
 #### FAQ
 
 ##### 1. How to run tests?
-`python -m unittest discover tests`
+`python -m unittest`
 
 ##### 2. How to format code with [Black](https://github.com/psf/black)?
 `python -m black {path_to_file}`
