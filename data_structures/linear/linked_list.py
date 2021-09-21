@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, value, next=None):
         self.value = value
@@ -54,14 +53,14 @@ class LinkedList:
                 return index
             index += 1
             node = node.next
-        raise ValueError('{} is not in list'.format(value))
+        raise ValueError("{} is not in list".format(value))
 
     def pop(self, pos=None):
         node = self.head
         index = 0
 
         if node is None:
-            raise IndexError('pop from empty list')
+            raise IndexError("pop from empty list")
 
         if pos is not None:
             if pos == 0:
@@ -78,7 +77,7 @@ class LinkedList:
                     self._size -= 1
                     prev.next = node.next
                     return node.value
-            raise IndexError('pop from empty list')
+            raise IndexError("pop from empty list")
 
         while node.next:
             prev = node
@@ -94,10 +93,10 @@ class LinkedList:
         return self.head == None
 
     def __str__(self):
-        result = ''
+        result = ""
         node = self.head
         while node:
-            result += '({}) => '.format(node.value)
+            result += "({}) => ".format(node.value)
             node = node.next
-        result += '(None)'
+        result += "(None)"
         return result

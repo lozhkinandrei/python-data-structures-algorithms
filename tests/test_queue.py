@@ -27,5 +27,5 @@ class TestQueueMethods(unittest.TestCase):
         self.assertEqual(self.queue.is_empty(), False)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

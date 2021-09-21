@@ -34,5 +34,5 @@ class TestStackMethods(unittest.TestCase):
         self.assertEqual(self.stack.is_empty(), False)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

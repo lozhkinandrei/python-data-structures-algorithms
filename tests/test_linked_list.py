@@ -65,12 +65,12 @@ class TestLinkedListMethods(unittest.TestCase):
         self.assertEqual(self.list.is_empty(), False)
 
     def test__str__(self):
-        self.assertEqual(self.list.__str__(), '(None)')
+        self.assertEqual(self.list.__str__(), "(None)")
         self.list.add(1)
         self.list.add(2)
         self.list.add(3)
-        self.assertEqual(self.list.__str__(), '(3) => (2) => (1) => (None)')
+        self.assertEqual(self.list.__str__(), "(3) => (2) => (1) => (None)")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

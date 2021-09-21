@@ -37,5 +37,5 @@ class TestDequeMethods(unittest.TestCase):
         self.assertEqual(self.deque.is_empty(), False)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
