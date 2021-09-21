@@ -1,5 +1,5 @@
 
-def find_peak1d_while_loop(array):
+def find_peak_1d_while_loop(array):
     start, end = 0, len(array)
 
     while True:
@@ -12,7 +12,7 @@ def find_peak1d_while_loop(array):
         else:
             return array[mid]
 
-def find_peak1d_recursive(array):
+def find_peak_1d_recursive(array):
     start, end = 0, len(array)
 
     def recursion(start, end):

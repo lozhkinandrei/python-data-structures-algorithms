@@ -1,8 +1,8 @@
 import unittest
-from problems.find_peak_1d import find_peak1d_while_loop, find_peak1d_recursive
+from problems.find_peak_1d import find_peak_1d_while_loop, find_peak_1d_recursive
 
 
-class TestPeekFinding1D(unittest.TestCase):
+class TestFindPeek1D(unittest.TestCase):
     def setUp(self):
         self.array1 = [0]
         self.array2 = [1,2,3,4,5,6,7,8,9,10]
@@ -12,20 +12,20 @@ class TestPeekFinding1D(unittest.TestCase):
         self.array6 = [1,7,9,20,3]
 
     def test_while_loop_implementation(self):
-        self.assertEqual(0, find_peak1d_while_loop(self.array1))
-        self.assertEqual(10, find_peak1d_while_loop(self.array2))
-        self.assertEqual(6, find_peak1d_while_loop(self.array3))
-        self.assertEqual(8, find_peak1d_while_loop(self.array4))
-        self.assertEqual(1, find_peak1d_while_loop(self.array5))
-        self.assertEqual(20, find_peak1d_while_loop(self.array6))
+        self.assertEqual(0, find_peak_1d_while_loop(self.array1))
+        self.assertEqual(10, find_peak_1d_while_loop(self.array2))
+        self.assertEqual(6, find_peak_1d_while_loop(self.array3))
+        self.assertEqual(8, find_peak_1d_while_loop(self.array4))
+        self.assertEqual(1, find_peak_1d_while_loop(self.array5))
+        self.assertEqual(20, find_peak_1d_while_loop(self.array6))
 
-    def test_while_recursive_implementation(self):
-        self.assertEqual(0, find_peak1d_recursive(self.array1))
-        self.assertEqual(10, find_peak1d_recursive(self.array2))
-        self.assertEqual(6, find_peak1d_recursive(self.array3))
-        self.assertEqual(8, find_peak1d_recursive(self.array4))
-        self.assertEqual(1, find_peak1d_recursive(self.array5))
-        self.assertEqual(20, find_peak1d_recursive(self.array6))
+    def test_recursive_implementation(self):
+        self.assertEqual(0, find_peak_1d_recursive(self.array1))
+        self.assertEqual(10, find_peak_1d_recursive(self.array2))
+        self.assertEqual(6, find_peak_1d_recursive(self.array3))
+        self.assertEqual(8, find_peak_1d_recursive(self.array4))
+        self.assertEqual(1, find_peak_1d_recursive(self.array5))
+        self.assertEqual(20, find_peak_1d_recursive(self.array6))
 
 
 if __name__ == '__main__':
