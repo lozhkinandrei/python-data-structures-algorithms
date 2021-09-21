@@ -1,1 +1,5 @@
 __pycache__/
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
