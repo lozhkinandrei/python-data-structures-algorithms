@@ -19,3 +19,6 @@ class Deque:
 
     def is_empty(self):
         return self.items == []
+
+    def __str__(self):
+        return str(self.items)
