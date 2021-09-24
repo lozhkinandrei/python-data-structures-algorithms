@@ -44,15 +44,30 @@ class TestLinkedListMethods(unittest.TestCase):
         self.assertEqual(self.list.index(3), 0)
 
     def test_pop(self):
-        self.assertRaises(IndexError, self.list.pop)
-        self.assertRaises(IndexError, self.list.pop, 1)
         self.list.add(1)
         self.list.add(2)
         self.list.add(3)
         self.list.add(4)
+        # should return value from the tail
         self.assertEqual(self.list.pop(), 1)
-        self.assertEqual(self.list.pop(1), 3)
-        self.assertEqual(self.list.size(), 2)
+        # should return value from the head
+        self.assertEqual(self.list.pop(0), 4)
+        # after pop operations above [3, 2] left
+        # pos 1 would mean value 2
+        self.assertEqual(self.list.pop(1), 2)
+
+    def test_pop_empty_list(self):
+        self.assertRaises(IndexError, self.list.pop)
+
+    def test_pop_index_out_of_range(self):
+        self.list.add(1)
+        self.list.add(2)
+        self.assertRaises(IndexError, self.list.pop, 5)
+
+    def test_pop_index_error(self):
+        self.list.add(1)
+        self.list.add(2)
+        self.assertRaises(IndexError, self.list.pop, 3)
 
     def test_size(self):
         self.list.add(1)
