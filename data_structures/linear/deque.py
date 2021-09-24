@@ -22,3 +22,6 @@ class Deque:
 
     def __str__(self):
         return str(self.items)
+
+    def __repr__(self):
+        return f"Deque: rear -> {str(self.items)} <- front"

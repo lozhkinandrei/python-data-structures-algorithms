@@ -7,10 +7,9 @@ class TestStackMethods(unittest.TestCase):
         self.stack = Stack()
 
     def test_push(self):
-        self.stack.push(1)
-        self.assertEqual(self.stack.items, [1])
-        self.stack.push(2)
-        self.assertEqual(self.stack.items, [1, 2])
+        self.stack.items = [1, 2, 3]
+        self.stack.push(4)
+        self.assertEqual(self.stack.items, [1, 2, 3, 4])
 
     def test_pop(self):
         self.stack.items = [1, 2]
@@ -20,6 +19,7 @@ class TestStackMethods(unittest.TestCase):
     def test_peek(self):
         self.stack.items = [1, 2]
         self.assertEqual(self.stack.peek(), 2)
+        self.assertEqual(self.stack.items, [1, 2])
 
     def test_size(self):
         self.stack.items = [1, 2]
@@ -32,9 +32,13 @@ class TestStackMethods(unittest.TestCase):
         self.stack.items = [1, 2]
         self.assertEqual(self.stack.is_empty(), False)
 
-    def test_str(self):
+    def test__str__(self):
         self.stack.items = [1, 2, 3]
         self.assertEqual(str(self.stack), "[1, 2, 3]")
+
+    def test__repr__(self):
+        self.stack.items = [1, 2, 3]
+        self.assertEqual(repr(self.stack), "Stack: bottom -> [1, 2, 3] <- top")
 
 
 if __name__ == "__main__":

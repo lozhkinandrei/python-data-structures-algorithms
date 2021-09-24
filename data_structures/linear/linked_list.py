@@ -93,10 +93,20 @@ class LinkedList:
         return self.head == None
 
     def __str__(self):
-        result = ""
+        items = []
+        node = self.head
+
+        while node:
+            items.append(node.value)
+            node = node.next
+
+        return str(items)
+
+    def __repr__(self):
+        items = []
         node = self.head
         while node:
-            result += "({}) => ".format(node.value)
+            items.append(node.value)
             node = node.next
-        result += "(None)"
-        return result
+
+        return f"Linked List: head -> {str(items)} <- tail"

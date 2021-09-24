@@ -19,3 +19,6 @@ class Stack:
 
     def __str__(self):
         return str(self.items)
+
+    def __repr__(self):
+        return f"Stack: bottom -> {str(self.items)} <- top"
