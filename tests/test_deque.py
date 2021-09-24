@@ -36,6 +36,14 @@ class TestDequeMethods(unittest.TestCase):
         self.deque.add_rear(1)
         self.assertEqual(self.deque.is_empty(), False)
 
+    def test__str__(self):
+        self.deque.items = [1, 2, 3, 4]
+        self.assertEqual(str(self.deque), "[1, 2, 3, 4]")
+
+    def test__repr__(self):
+        self.deque.items = [1, 2, 3, 4]
+        self.assertEqual(repr(self.deque), "Deque: rear -> [1, 2, 3, 4] <- front")
+
 
 if __name__ == "__main__":
     unittest.main()

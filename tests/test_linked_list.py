@@ -65,11 +65,16 @@ class TestLinkedListMethods(unittest.TestCase):
         self.assertEqual(self.list.is_empty(), False)
 
     def test__str__(self):
-        self.assertEqual(self.list.__str__(), "(None)")
         self.list.add(1)
         self.list.add(2)
         self.list.add(3)
-        self.assertEqual(self.list.__str__(), "(3) => (2) => (1) => (None)")
+        self.assertEqual(str(self.list), "[3, 2, 1]")
+
+    def test__repr__(self):
+        self.list.add(1)
+        self.list.add(2)
+        self.list.add(3)
+        self.assertEqual(repr(self.list), "Linked List: head -> [3, 2, 1] <- tail")
 
 
 if __name__ == "__main__":
