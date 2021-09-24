@@ -41,6 +41,8 @@ class TestTreeMethods(unittest.TestCase):
         self.tree.left.insert_right(5)
         self.assertEqual(self.tree.inorder(), [4, 2, 5, 1, 3])
 
+
+
     def test_breadth_first_traversal(self):
         self.tree.insert_left(2)
         self.tree.insert_right(3)
