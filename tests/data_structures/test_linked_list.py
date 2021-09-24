@@ -55,12 +55,13 @@ class TestLinkedListMethods(unittest.TestCase):
         self.assertEqual(self.list.size(), 2)
 
     def test_size(self):
-        self.assertEqual(self.list.size(), 0)
         self.list.add(1)
         self.assertEqual(self.list.size(), 1)
 
-    def test_is_empty(self):
+    def test_is_empty_true(self):
         self.assertEqual(self.list.is_empty(), True)
+
+    def test_is_empty_false(self):
         self.list.add(1)
         self.assertEqual(self.list.is_empty(), False)
 
