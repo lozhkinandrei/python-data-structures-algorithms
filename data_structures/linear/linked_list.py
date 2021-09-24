@@ -77,7 +77,7 @@ class LinkedList:
                     self._size -= 1
                     prev.next = node.next
                     return node.value
-            raise IndexError("pop from empty list")
+            raise IndexError("pop index out of range")
 
         while node.next:
             prev = node
