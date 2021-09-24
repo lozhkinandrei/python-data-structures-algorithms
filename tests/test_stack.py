@@ -32,9 +32,13 @@ class TestStackMethods(unittest.TestCase):
         self.stack.items = [1, 2]
         self.assertEqual(self.stack.is_empty(), False)
 
-    def test_str(self):
+    def test__str__(self):
         self.stack.items = [1, 2, 3]
         self.assertEqual(str(self.stack), "[1, 2, 3]")
+
+    def test__repr__(self):
+        self.stack.items = [1, 2, 3]
+        self.assertEqual(repr(self.stack), "Stack: bottom -> [1, 2, 3] <- top")
 
 
 if __name__ == "__main__":

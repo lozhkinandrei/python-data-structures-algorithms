@@ -26,6 +26,14 @@ class TestQueueMethods(unittest.TestCase):
         self.queue.enqueue(1)
         self.assertEqual(self.queue.is_empty(), False)
 
+    def test__str__(self):
+        self.queue.items = [1, 2, 3, 4]
+        self.assertEqual(str(self.queue), "[1, 2, 3, 4]")
+
+    def test__repr__(self):
+        self.queue.items = [1, 2, 3, 4]
+        self.assertEqual(repr(self.queue), "Queue: tail -> [1, 2, 3, 4] <- head")
+
 
 if __name__ == "__main__":
     unittest.main()
