@@ -91,7 +91,3 @@ class TestLinkedListMethods(unittest.TestCase):
         self.list.add(2)
         self.list.add(3)
         self.assertEqual(repr(self.list), "Linked List: head -> [3, 2, 1] <- tail")
-
-
-if __name__ == "__main__":
-    unittest.main()

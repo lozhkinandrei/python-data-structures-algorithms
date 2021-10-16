@@ -39,7 +39,3 @@ class TestStackMethods(unittest.TestCase):
     def test__repr__(self):
         self.stack.items = [1, 2, 3]
         self.assertEqual(repr(self.stack), "Stack: bottom -> [1, 2, 3] <- top")
-
-
-if __name__ == "__main__":
-    unittest.main()
