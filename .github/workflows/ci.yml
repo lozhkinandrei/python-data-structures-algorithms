@@ -28,11 +28,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Black formatting check
+        run: black --check --verbose .
+      
+      - name: Sorting imports
+        run: isort .
+      
       - name: Flake8 linting
         run: flake8 
-
-      - name: Black formatter check
-        run: black --check --verbose .
 
       - name: Generate coverage report
         run: |
