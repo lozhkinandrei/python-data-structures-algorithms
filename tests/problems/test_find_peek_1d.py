@@ -1,5 +1,6 @@
 import unittest
-from problems.find_peak_1d import find_peak_1d_while_loop, find_peak_1d_recursive
+
+from problems.find_peak_1d import find_peak_1d_recursive, find_peak_1d_while_loop
 
 
 class TestFindPeek1D(unittest.TestCase):

@@ -1,4 +1,5 @@
 import unittest
+
 from data_structures.linear.deque import Deque
 
 
