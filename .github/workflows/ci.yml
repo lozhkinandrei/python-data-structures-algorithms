@@ -25,6 +25,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Flake8 linting
+        run: flake8 
+
       - name: Black formatter check
         run: black --check --verbose .
 
