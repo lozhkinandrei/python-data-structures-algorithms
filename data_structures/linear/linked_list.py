@@ -18,7 +18,6 @@ class LinkedList:
 
         if node:
             while node.next:
-                prev = node
                 node = node.next
             node.next = Node(value)
         else:
@@ -37,6 +36,8 @@ class LinkedList:
     def remove(self, value):
         if self.index(value):
             node = self.head
+            prev = node
+
             while node:
                 if node.value == value:
                     prev.next = node.next
@@ -90,7 +91,7 @@ class LinkedList:
         return self._size
 
     def is_empty(self):
-        return self.head == None
+        return self.head is None
 
     def __str__(self):
         items = []

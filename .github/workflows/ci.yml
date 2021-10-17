@@ -1,9 +1,12 @@
 name: CI
 
 on:
-  pull_request:
-    branches: [ master, develop ]
+  push:
+      branches: [ develop ]
 
+  pull_request:
+    branches: [ master ]
+  
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -25,8 +28,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Black formatter check
+      - name: Black formatting check
         run: black --check --verbose .
+      
+      - name: Sorting imports
+        run: isort .
+      
+      - name: Flake8 linting
+        run: flake8 
 
       - name: Generate coverage report
         run: |

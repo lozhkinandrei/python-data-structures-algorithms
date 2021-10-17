@@ -1,5 +1,6 @@
 import unittest
-from problems.find_peak_1d import find_peak_1d_while_loop, find_peak_1d_recursive
+
+from problems.find_peak_1d import find_peak_1d_recursive, find_peak_1d_while_loop
 
 
 class TestFindPeek1D(unittest.TestCase):
@@ -26,7 +27,3 @@ class TestFindPeek1D(unittest.TestCase):
         self.assertEqual(8, find_peak_1d_recursive(self.array4))
         self.assertEqual(1, find_peak_1d_recursive(self.array5))
         self.assertEqual(20, find_peak_1d_recursive(self.array6))
-
-
-if __name__ == "__main__":
-    unittest.main()

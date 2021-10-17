@@ -1,4 +1,5 @@
 import unittest
+
 from data_structures.linear.deque import Deque
 
 
@@ -44,7 +45,3 @@ class TestDequeMethods(unittest.TestCase):
     def test__repr__(self):
         self.deque.items = [1, 2, 3, 4]
         self.assertEqual(repr(self.deque), "Deque: rear -> [1, 2, 3, 4] <- front")
-
-
-if __name__ == "__main__":
-    unittest.main()

@@ -1,4 +1,5 @@
 import unittest
+
 from data_structures.non_linear.tree import Node
 
 
@@ -47,7 +48,3 @@ class TestTreeMethods(unittest.TestCase):
         self.tree.left.insert_left(4)
         self.tree.left.insert_right(5)
         self.assertEqual(self.tree.breadth_first_traversal(), [1, 2, 3, 4, 5])
-
-
-if __name__ == "__main__":
-    unittest.main()

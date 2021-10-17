@@ -1,4 +1,5 @@
 import unittest
+
 from data_structures.linear.linked_list import LinkedList
 
 
@@ -28,13 +29,16 @@ class TestLinkedListMethods(unittest.TestCase):
         self.assertEqual(self.list.search(2), True)
         self.assertEqual(self.list.search(3), False)
 
-    def test_remove(self):
+    def test_remove_from_empty_list(self):
         self.assertRaises(ValueError, self.list.remove, 1)
+
+    def test_remove(self):
         self.list.add(1)
         self.list.add(2)
         self.list.add(3)
         self.assertEqual(self.list.remove(2), None)
         self.assertEqual(self.list.search(2), False)
+        self.assertEqual(self.list._size, 2)
 
     def test_index(self):
         self.assertRaises(ValueError, self.list.index, 1)
@@ -91,7 +95,3 @@ class TestLinkedListMethods(unittest.TestCase):
         self.list.add(2)
         self.list.add(3)
         self.assertEqual(repr(self.list), "Linked List: head -> [3, 2, 1] <- tail")
-
-
-if __name__ == "__main__":
-    unittest.main()
