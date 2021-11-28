@@ -10,5 +10,6 @@
 1. Autoformat code: `make format` or `black .`
 2. Lint: `make lint` or `flake8 .`
 3. Test: `make test` or `coverage run -m unittest`
+4. Coverage: `make coverage` or `coverage report && coverage html`
 
 #### [See documentation](https://lozhkinandrei.github.io/python-data-structures-algorithms)

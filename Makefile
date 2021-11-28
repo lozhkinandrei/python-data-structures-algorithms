@@ -6,3 +6,6 @@ lint:
 
 test:
 	coverage run -m unittest
+
+coverage:
+	coverage report && coverage html
