@@ -10,5 +10,5 @@
     "python.testing.unittestEnabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
-    "files.eol": "\n", // LF endings
+    "files.eol": "\n",
 }
