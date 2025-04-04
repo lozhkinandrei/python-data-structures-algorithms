@@ -1,4 +1,4 @@
-from typing import Optional, Any, List
+from typing import Optional, Any, List, TypeVar, Generic
 from queue import Queue as PyQueue
 
 
@@ -151,13 +151,13 @@ class Node:
         
         Returns:
             list: A list containing the keys in breadth-first traversal order.
-            
+        
         Time Complexity: O(n), where n is the number of nodes in the tree.
         Space Complexity: O(w), where w is the maximum width of the tree.
         """
         result = []
 
-        queue = PyQueue()
+        queue: PyQueue['Node'] = PyQueue()
         queue.put(self)
 
         while queue.qsize() > 0:

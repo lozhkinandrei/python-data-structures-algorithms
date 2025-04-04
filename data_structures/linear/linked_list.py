@@ -1,6 +1,5 @@
 from typing import Optional, Any, List
 
-
 class Node:
     """
     A node in a singly linked list.
@@ -87,10 +86,10 @@ class LinkedList:
         
         Parameters:
             value: The value to search for.
-            
+        
         Returns:
             bool: True if the value is found in the list, False otherwise.
-            
+        
         Time Complexity: O(n), where n is the number of elements in the list.
         """
         node = self.head
@@ -106,26 +105,33 @@ class LinkedList:
         
         Parameters:
             value: The value to be removed.
-            
-        Returns:
-            None
-            
+        
         Raises:
-            ValueError: If the value is not in the list (indirectly via self.index).
-            
+            ValueError: If the value is not found in the list.
+        
         Time Complexity: O(n), where n is the number of elements in the list.
         """
-        if self.index(value):
-            node = self.head
-            prev = node
+        if self.head is None:
+            raise ValueError("Value not found in list")
 
-            while node:
-                if node.value == value:
-                    prev.next = node.next
-                    self._size -= 1
-                    break
-                prev = node
-                node = node.next
+        # Handle head node case
+        if self.head.value == value:
+            self.head = self.head.next
+            self._size -= 1
+            return
+
+        prev = self.head
+        current = prev.next
+
+        while current is not None:
+            if current.value == value:
+                prev.next = current.next
+                self._size -= 1
+                return
+            prev = current
+            current = current.next
+
+        raise ValueError("Value not found in list")
 
     def index(self, value: Any) -> int:
         """
@@ -133,13 +139,13 @@ class LinkedList:
         
         Parameters:
             value: The value to search for.
-            
+        
         Returns:
             int: The zero-based index of the value.
-            
+        
         Raises:
             ValueError: If the value is not found in the list.
-            
+        
         Time Complexity: O(n), where n is the number of elements in the list.
         """
         node = self.head
@@ -157,47 +163,71 @@ class LinkedList:
         
         Parameters:
             pos (int, optional): The position of the element to remove.
-                If None, removes and returns the last element.
-                
+                - If 0: remove from head
+                - If None: remove last element
+                - Other integers: remove at specified position
+        
         Returns:
             The value of the removed element.
-            
+        
         Raises:
-            IndexError: If the list is empty or the position is out of range.
-            
+            IndexError: If list is empty or position is out of bounds
+        
         Time Complexity:
-            - O(1) if pos=0 (first element)
-            - O(n) otherwise, where n is the number of elements in the list.
+            - O(1) for head removal
+            - O(n) for other cases
         """
-        node = self.head
-        index = 0
-
-        if node is None:
+        if self.head is None:
             raise IndexError("pop from empty list")
 
+        # Handle head removal
+        if pos == 0:
+            value = self.head.value
+            self.head = self.head.next
+            self._size -= 1
+            return value
+
+        # Handle specified position
         if pos is not None:
-            if pos == 0:
-                self._size -= 1
-                value = self.head.value
-                self.head = self.head.next
-                return value
+            if pos < 0 or pos >= self._size:
+                raise IndexError("pop index out of range")
+            
+            prev: Optional[Node] = None
+            current: Optional[Node] = self.head
+            index = 0
 
-            while node.next:
-                prev = node
-                node = node.next
+            while current and index < pos:
+                prev = current
+                current = current.next
                 index += 1
-                if index == pos:
-                    self._size -= 1
-                    prev.next = node.next
-                    return node.value
-            raise IndexError("pop index out of range")
 
-        while node.next:
-            prev = node
-            node = node.next
-        prev.next = None
+            if current is None:
+                raise IndexError("pop index out of range")
+
+            if prev:
+                prev.next = current.next
+            else:
+                self.head = current.next
+            
+            self._size -= 1
+            return current.value
+
+        # Handle last element removal
+        assert self.head is not None  # Ensured by earlier check
+        last_prev: Optional[Node] = None
+        last_current: Node = self.head
+        while last_current.next is not None:
+            last_prev = last_current
+            last_current = last_current.next
+
+        value = last_current.value
+        if last_prev:
+            last_prev.next = None
+        else:
+            self.head = None
+        
         self._size -= 1
-        return node.value
+        return value
 
     def size(self) -> int:
         """
@@ -205,7 +235,7 @@ class LinkedList:
         
         Returns:
             int: The number of elements in the list.
-            
+        
         Time Complexity: O(1)
         """
         return self._size
@@ -216,7 +246,7 @@ class LinkedList:
         
         Returns:
             bool: True if the list is empty, False otherwise.
-            
+        
         Time Complexity: O(1)
         """
         return self.head is None
@@ -227,7 +257,7 @@ class LinkedList:
         
         Returns:
             str: A string representation of the list as an array of values.
-            
+        
         Time Complexity: O(n), where n is the number of elements in the list.
         """
         items = []
@@ -245,7 +275,7 @@ class LinkedList:
         
         Returns:
             str: A detailed string representation of the list, showing direction from head to tail.
-            
+        
         Time Complexity: O(n), where n is the number of elements in the list.
         """
         items = []
@@ -253,5 +283,4 @@ class LinkedList:
         while node:
             items.append(node.value)
             node = node.next
-
         return f"Linked List: head -> {str(items)} <- tail"

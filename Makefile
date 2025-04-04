@@ -9,3 +9,6 @@ test:
 
 coverage:
 	coverage report && coverage html
+
+typecheck:
+	mypy .

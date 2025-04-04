@@ -36,7 +36,7 @@ class TestLinkedListMethods(unittest.TestCase):
         self.list.add(1)
         self.list.add(2)
         self.list.add(3)
-        self.assertEqual(self.list.remove(2), None)
+        self.list.remove(2)  # remove assertion expecting a return value
         self.assertEqual(self.list.search(2), False)
         self.assertEqual(self.list._size, 2)
 
