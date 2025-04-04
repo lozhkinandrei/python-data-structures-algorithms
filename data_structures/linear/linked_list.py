@@ -1,3 +1,6 @@
+from typing import Optional, Any, List
+
+
 class Node:
     """
     A node in a singly linked list.
@@ -6,7 +9,7 @@ class Node:
     to the next node in the sequence.
     """
     
-    def __init__(self, value, next=None):
+    def __init__(self, value: Any, next: Optional['Node'] = None) -> None:
         """
         Initialize a new node.
         
@@ -16,8 +19,8 @@ class Node:
         
         Time Complexity: O(1)
         """
-        self.value = value
-        self.next = next
+        self.value: Any = value
+        self.next: Optional['Node'] = next
 
 
 class LinkedList:
@@ -29,7 +32,7 @@ class LinkedList:
     maintains a reference to the head node and tracks its size.
     """
     
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Initialize an empty linked list.
         
@@ -37,10 +40,10 @@ class LinkedList:
         
         Time Complexity: O(1)
         """
-        self.head = None
-        self._size = 0
+        self.head: Optional[Node] = None
+        self._size: int = 0
 
-    def add(self, value):
+    def add(self, value: Any) -> None:
         """
         Add a new node at the beginning of the linked list.
         
@@ -55,7 +58,7 @@ class LinkedList:
         self.head = Node(value, self.head)
         self._size += 1
 
-    def append(self, value):
+    def append(self, value: Any) -> None:
         """
         Add a new node at the end of the linked list.
         
@@ -78,7 +81,7 @@ class LinkedList:
 
         self._size += 1
 
-    def search(self, value):
+    def search(self, value: Any) -> bool:
         """
         Search for a value in the linked list.
         
@@ -97,7 +100,7 @@ class LinkedList:
             node = node.next
         return False
 
-    def remove(self, value):
+    def remove(self, value: Any) -> None:
         """
         Remove the first occurrence of a value from the linked list.
         
@@ -124,7 +127,7 @@ class LinkedList:
                 prev = node
                 node = node.next
 
-    def index(self, value):
+    def index(self, value: Any) -> int:
         """
         Find the index of the first occurrence of a value in the linked list.
         
@@ -148,7 +151,7 @@ class LinkedList:
             node = node.next
         raise ValueError("{} is not in list".format(value))
 
-    def pop(self, pos=None):
+    def pop(self, pos: Optional[int] = None) -> Any:
         """
         Remove and return an element from the linked list.
         
@@ -196,7 +199,7 @@ class LinkedList:
         self._size -= 1
         return node.value
 
-    def size(self):
+    def size(self) -> int:
         """
         Get the number of elements in the linked list.
         
@@ -207,7 +210,7 @@ class LinkedList:
         """
         return self._size
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """
         Check if the linked list is empty.
         
@@ -218,7 +221,7 @@ class LinkedList:
         """
         return self.head is None
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Get a string representation of the linked list.
         
@@ -236,7 +239,7 @@ class LinkedList:
 
         return str(items)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Get a detailed string representation of the linked list.
         

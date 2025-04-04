@@ -1,4 +1,5 @@
-from queue import Queue
+from typing import Optional, Any, List
+from queue import Queue as PyQueue
 
 
 class Node:
@@ -9,7 +10,7 @@ class Node:
     to left and right child nodes. It also provides methods for tree traversal and node insertion.
     """
     
-    def __init__(self, key, left=None, right=None):
+    def __init__(self, key: Any, left: Optional['Node'] = None, right: Optional['Node'] = None) -> None:
         """
         Initialize a new binary tree node.
         
@@ -20,11 +21,11 @@ class Node:
         
         Time Complexity: O(1)
         """
-        self.key = key
-        self.left = None
-        self.right = None
+        self.key: Any = key
+        self.left: Optional['Node'] = None
+        self.right: Optional['Node'] = None
 
-    def insert_left(self, key):
+    def insert_left(self, key: Any) -> None:
         """
         Insert a new node as the left child.
         
@@ -46,7 +47,7 @@ class Node:
         else:
             self.left = Node(key)
 
-    def insert_right(self, key):
+    def insert_right(self, key: Any) -> None:
         """
         Insert a new node as the right child.
         
@@ -68,7 +69,7 @@ class Node:
         else:
             self.right = Node(key)
 
-    def preorder(self):
+    def preorder(self) -> List[Any]:
         """
         Perform a preorder traversal starting from this node.
         
@@ -92,7 +93,7 @@ class Node:
 
         return result
 
-    def postorder(self):
+    def postorder(self) -> List[Any]:
         """
         Perform a postorder traversal starting from this node.
         
@@ -115,7 +116,7 @@ class Node:
         result.append(self.key)
         return result
 
-    def inorder(self):
+    def inorder(self) -> List[Any]:
         """
         Perform an inorder traversal starting from this node.
         
@@ -140,7 +141,7 @@ class Node:
 
         return result
 
-    def breadth_first_traversal(self):
+    def breadth_first_traversal(self) -> List[Any]:
         """
         Perform a breadth-first (level-order) traversal starting from this node.
         
@@ -156,7 +157,7 @@ class Node:
         """
         result = []
 
-        queue = Queue()
+        queue = PyQueue()
         queue.put(self)
 
         while queue.qsize() > 0:

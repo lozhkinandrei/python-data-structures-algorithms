@@ -1,3 +1,6 @@
+from typing import Any, List
+
+
 class Deque:
     """
     A list-based double-ended queue implementation.
@@ -7,7 +10,7 @@ class Deque:
     list for internal storage, allowing efficient operations at both ends.
     """
     
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Initialize an empty deque.
         
@@ -15,9 +18,9 @@ class Deque:
         
         Time Complexity: O(1)
         """
-        self.items = []
+        self.items: List[Any] = []
 
-    def add_front(self, item):
+    def add_front(self, item: Any) -> None:
         """
         Add an item to the front of the deque.
         
@@ -31,7 +34,7 @@ class Deque:
         """
         self.items.append(item)
 
-    def add_rear(self, item):
+    def add_rear(self, item: Any) -> None:
         """
         Add an item to the rear of the deque.
         
@@ -46,7 +49,7 @@ class Deque:
         """
         self.items.insert(0, item)
 
-    def pop_front(self):
+    def pop_front(self) -> Any:
         """
         Remove and return the item from the front of the deque.
         
@@ -60,7 +63,7 @@ class Deque:
         """
         return self.items.pop()
 
-    def pop_rear(self):
+    def pop_rear(self) -> Any:
         """
         Remove and return the item from the rear of the deque.
         
@@ -75,7 +78,7 @@ class Deque:
         """
         return self.items.pop(0)
 
-    def size(self):
+    def size(self) -> int:
         """
         Get the number of items in the deque.
         
@@ -86,7 +89,7 @@ class Deque:
         """
         return len(self.items)
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """
         Check if the deque is empty.
         
@@ -97,7 +100,7 @@ class Deque:
         """
         return self.items == []
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Get a string representation of the deque.
         
@@ -108,7 +111,7 @@ class Deque:
         """
         return str(self.items)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Get a detailed string representation of the deque.
         

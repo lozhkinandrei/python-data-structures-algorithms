@@ -1,3 +1,6 @@
+from typing import Any, List
+
+
 class Stack:
     """
     A list-based stack implementation.
@@ -7,7 +10,7 @@ class Stack:
     a Python list for internal storage.
     """
     
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Initialize an empty stack.
         
@@ -15,9 +18,9 @@ class Stack:
         
         Time Complexity: O(1)
         """
-        self.items = []
+        self.items: List[Any] = []
 
-    def push(self, item):
+    def push(self, item: Any) -> None:
         """
         Push an item onto the stack.
         
@@ -31,7 +34,7 @@ class Stack:
         """
         self.items.append(item)
 
-    def pop(self):
+    def pop(self) -> Any:
         """
         Remove and return the top item from the stack.
         
@@ -45,7 +48,7 @@ class Stack:
         """
         return self.items.pop()
 
-    def peek(self):
+    def peek(self) -> Any:
         """
         Return the top item from the stack without removing it.
         
@@ -59,7 +62,7 @@ class Stack:
         """
         return self.items[-1]
 
-    def size(self):
+    def size(self) -> int:
         """
         Get the number of items in the stack.
         
@@ -70,7 +73,7 @@ class Stack:
         """
         return len(self.items)
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """
         Check if the stack is empty.
         
@@ -81,7 +84,7 @@ class Stack:
         """
         return self.items == []
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Get a string representation of the stack.
         
@@ -92,7 +95,7 @@ class Stack:
         """
         return str(self.items)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Get a detailed string representation of the stack.
         

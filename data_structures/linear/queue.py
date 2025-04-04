@@ -1,3 +1,6 @@
+from typing import Any, List
+
+
 class Queue:
     """
     A list-based queue implementation.
@@ -7,7 +10,7 @@ class Queue:
     a Python list for internal storage.
     """
     
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Initialize an empty queue.
         
@@ -15,9 +18,9 @@ class Queue:
         
         Time Complexity: O(1)
         """
-        self.items = []
+        self.items: List[Any] = []
 
-    def enqueue(self, item):
+    def enqueue(self, item: Any) -> None:
         """
         Add an item to the queue.
         
@@ -32,7 +35,7 @@ class Queue:
         """
         self.items.insert(0, item)
 
-    def dequeue(self):
+    def dequeue(self) -> Any:
         """
         Remove and return the front item from the queue.
         
@@ -46,7 +49,7 @@ class Queue:
         """
         return self.items.pop()
 
-    def size(self):
+    def size(self) -> int:
         """
         Get the number of items in the queue.
         
@@ -57,7 +60,7 @@ class Queue:
         """
         return len(self.items)
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """
         Check if the queue is empty.
         
@@ -68,7 +71,7 @@ class Queue:
         """
         return self.items == []
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Get a string representation of the queue.
         
@@ -79,7 +82,7 @@ class Queue:
         """
         return str(self.items)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Get a detailed string representation of the queue.
         
