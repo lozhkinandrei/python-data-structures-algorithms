@@ -1,19 +1,72 @@
 class Node:
+    """
+    A node in a singly linked list.
+    
+    This class represents a node in a singly linked list, containing a value and a reference
+    to the next node in the sequence.
+    """
+    
     def __init__(self, value, next=None):
+        """
+        Initialize a new node.
+        
+        Parameters:
+            value: The value to be stored in the node.
+            next (Node, optional): Reference to the next node. Defaults to None.
+        
+        Time Complexity: O(1)
+        """
         self.value = value
         self.next = next
 
 
 class LinkedList:
+    """
+    A singly linked list implementation.
+    
+    This class implements a singly linked list data structure with standard operations
+    like add, append, search, remove, and various other utility methods. The list
+    maintains a reference to the head node and tracks its size.
+    """
+    
     def __init__(self):
+        """
+        Initialize an empty linked list.
+        
+        Creates a new linked list with no nodes and size zero.
+        
+        Time Complexity: O(1)
+        """
         self.head = None
         self._size = 0
 
     def add(self, value):
+        """
+        Add a new node at the beginning of the linked list.
+        
+        Parameters:
+            value: The value to be stored in the new node.
+            
+        Returns:
+            None
+            
+        Time Complexity: O(1)
+        """
         self.head = Node(value, self.head)
         self._size += 1
 
     def append(self, value):
+        """
+        Add a new node at the end of the linked list.
+        
+        Parameters:
+            value: The value to be stored in the new node.
+            
+        Returns:
+            None
+            
+        Time Complexity: O(n), where n is the number of elements in the list.
+        """
         node = self.head
 
         if node:
@@ -26,6 +79,17 @@ class LinkedList:
         self._size += 1
 
     def search(self, value):
+        """
+        Search for a value in the linked list.
+        
+        Parameters:
+            value: The value to search for.
+            
+        Returns:
+            bool: True if the value is found in the list, False otherwise.
+            
+        Time Complexity: O(n), where n is the number of elements in the list.
+        """
         node = self.head
         while node:
             if node.value == value:
@@ -34,6 +98,20 @@ class LinkedList:
         return False
 
     def remove(self, value):
+        """
+        Remove the first occurrence of a value from the linked list.
+        
+        Parameters:
+            value: The value to be removed.
+            
+        Returns:
+            None
+            
+        Raises:
+            ValueError: If the value is not in the list (indirectly via self.index).
+            
+        Time Complexity: O(n), where n is the number of elements in the list.
+        """
         if self.index(value):
             node = self.head
             prev = node
@@ -47,6 +125,20 @@ class LinkedList:
                 node = node.next
 
     def index(self, value):
+        """
+        Find the index of the first occurrence of a value in the linked list.
+        
+        Parameters:
+            value: The value to search for.
+            
+        Returns:
+            int: The zero-based index of the value.
+            
+        Raises:
+            ValueError: If the value is not found in the list.
+            
+        Time Complexity: O(n), where n is the number of elements in the list.
+        """
         node = self.head
         index = 0
         while node:
@@ -57,6 +149,23 @@ class LinkedList:
         raise ValueError("{} is not in list".format(value))
 
     def pop(self, pos=None):
+        """
+        Remove and return an element from the linked list.
+        
+        Parameters:
+            pos (int, optional): The position of the element to remove.
+                If None, removes and returns the last element.
+                
+        Returns:
+            The value of the removed element.
+            
+        Raises:
+            IndexError: If the list is empty or the position is out of range.
+            
+        Time Complexity:
+            - O(1) if pos=0 (first element)
+            - O(n) otherwise, where n is the number of elements in the list.
+        """
         node = self.head
         index = 0
 
@@ -88,12 +197,36 @@ class LinkedList:
         return node.value
 
     def size(self):
+        """
+        Get the number of elements in the linked list.
+        
+        Returns:
+            int: The number of elements in the list.
+            
+        Time Complexity: O(1)
+        """
         return self._size
 
     def is_empty(self):
+        """
+        Check if the linked list is empty.
+        
+        Returns:
+            bool: True if the list is empty, False otherwise.
+            
+        Time Complexity: O(1)
+        """
         return self.head is None
 
     def __str__(self):
+        """
+        Get a string representation of the linked list.
+        
+        Returns:
+            str: A string representation of the list as an array of values.
+            
+        Time Complexity: O(n), where n is the number of elements in the list.
+        """
         items = []
         node = self.head
 
@@ -104,6 +237,14 @@ class LinkedList:
         return str(items)
 
     def __repr__(self):
+        """
+        Get a detailed string representation of the linked list.
+        
+        Returns:
+            str: A detailed string representation of the list, showing direction from head to tail.
+            
+        Time Complexity: O(n), where n is the number of elements in the list.
+        """
         items = []
         node = self.head
         while node:
